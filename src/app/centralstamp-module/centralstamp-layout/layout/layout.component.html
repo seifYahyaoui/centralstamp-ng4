@@ -1,0 +1,51 @@
+<!--<ng-template [ngIf]="layoutConfig">-->
+    <!--<split [direction]="layoutConfig.direction"-->
+           <!--[disabled]="layoutConfig.disabled"-->
+           <!--(dragEnd)="onDragEndV2(layoutConfig.splitColumnId, $event)"-->
+           <!--[gutterSize]="layoutConfig.gutterSize">-->
+
+      <!--<ng-template ngFor let-row [ngForOf]="layoutConfig.splitAreas">-->
+
+        <!--<split-area [order]="row.order"-->
+                    <!--[size]="row.size"-->
+                    <!--[visible]="row.visible">-->
+          <!--<ng-template [ngIf]="!row.splitPanelType && row.split">-->
+
+            <!--<layout [layoutConfig]="row.split"></layout>-->
+          <!--</ng-template>-->
+          <!--<div *ngIf="row.splitPanelType">-->
+            <!--<div [ngSwitch]="row.splitPanelType">-->
+              <!--&lt;!&ndash;column 0&ndash;&gt;-->
+              <!--<div *ngSwitchCase="centralStampLayoutComposite.PANEL_TREE_ZONE">-->
+                <!--<div class="panel"><span class="h6">PANEL_TREE_ZONE</span></div>-->
+              <!--</div>-->
+              <!--<div *ngSwitchCase="centralStampLayoutComposite.PANEL_TREE_DEVICE">-->
+                <!--<div class="panel"><span class="h6">PANEL_TREE_DEVICE</span></div>-->
+              <!--</div>-->
+              <!--&lt;!&ndash;column 1&ndash;&gt;-->
+              <!--<div *ngSwitchCase="centralStampLayoutComposite.PANEL_MAP">-->
+                <!--<div class="panel"><span class="h6">PANEL_MAP</span></div>-->
+              <!--</div>-->
+              <!--<div *ngSwitchCase="centralStampLayoutComposite.PANEL_VIDEO">-->
+                <!--<div class="panel"><span class="h6">PANEL_VIDEO</span></div>-->
+              <!--</div>-->
+              <!--<div *ngSwitchCase="centralStampLayoutComposite.PANEL_EVENT_DISPLAYER">-->
+                <!--<div class="panel"><span class="h6">PANEL_EVENT_DISPLAYER</span></div>-->
+              <!--</div>-->
+              <!--<div *ngSwitchCase="centralStampLayoutComposite.PANEL_EVENT_TIMELINE">-->
+                <!--<div class="panel"><span class="h6">PANEL_EVENT_TIMELINE</span></div>-->
+              <!--</div>-->
+              <!--&lt;!&ndash;column 2&ndash;&gt;-->
+              <!--<div *ngSwitchCase="centralStampLayoutComposite.PANEL_ALARM_DISPLAYER">-->
+                <!--<div class="panel"><span class="h6">PANEL_ALARM_DISPLAYER</span></div>-->
+              <!--</div>-->
+              <!--<div *ngSwitchCase="centralStampLayoutComposite.PANEL_ALARM_REPORT">-->
+                <!--<div class="panel"><span class="h6">PANEL_ALARM_REPORT</span></div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</split-area>-->
+      <!--</ng-template>-->
+    <!--</split>-->
+  <!--</ng-template>-->
+<split-layout-column [splitConfig]="layoutConfig"></split-layout-column>

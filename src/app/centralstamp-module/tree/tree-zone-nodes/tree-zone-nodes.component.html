@@ -1,0 +1,20 @@
+<ul *ngFor="let zoneNode of treeZoneNodes">
+
+    <li class="tree-zone">
+      <span  (click)="zoneNode.display = !zoneNode.display"  class="tree-icon ion-ios-location"></span>
+      <span class="tree-label">{{zoneNode.name}}</span>
+      <a class="tree-link ion-ios-navigate">
+        <span></span>
+      </a>
+    </li>
+  <ng-template [ngIf]="zoneNode.display">
+    <app-tree-zone-nodes *ngIf="zoneNode.treeZoneChilds.length>0" [treeZoneNodes]="zoneNode.treeZoneChilds"></app-tree-zone-nodes>
+
+    <ul *ngIf="zoneNode.treeDevices.length > 0">
+      <li *ngFor="let deviceNode of zoneNode.treeDevices" class="tree-device">
+        <span class="tree-icon ion-ios-videocam"></span><span class="tree-label">{{deviceNode.name}}</span><a
+        class="tree-link ion-ios-navigate-outline">
+        <span></span></a></li>
+    </ul>
+  </ng-template>
+</ul>

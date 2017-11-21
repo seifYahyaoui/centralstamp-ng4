@@ -1,0 +1,108 @@
+<div class="ui-layout-west panel-unstyled">
+  <div id="panel-tree-zone" class="ui-layout-center panel scrollable">
+    <div class="row">
+      <div id="tree" class="col-md-12">
+        <app-tree-zone-nodes [treeZoneNodes]="treeUI.treeNodes"></app-tree-zone-nodes>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<div class="ui-layout-west panel-unstyled">
+  <div id="panel-tree-zone" class="ui-layout-center panel scrollable">
+
+    <div class="row">
+      <div id="tree" class="col-md-12">
+        <ul>
+          <li class="tree-zone"><span class="tree-icon ion-ios-location"></span><span
+            class="tree-label">Tunisie</span><a id="0" type="zone" entity="0"
+                                                class="tree-link ion-ios-navigate"><span></span></a></li>
+          <ul>
+            <li class="tree-zone"><span class="tree-icon ion-ios-location"></span><span
+              class="tree-label">Tunis</span><a id="1" type="zone" entity="1"
+                                                class="tree-link ion-ios-navigate"><span></span></a></li>
+            <ul>
+              <li class="tree-zone"><span class="tree-icon ion-ios-location"></span><span
+                class="tree-label">Charguia 2</span><a id="10" type="zone" entity="10"
+                                                       class="tree-link ion-ios-navigate"><span></span></a></li>
+              <ul>
+                <li class="tree-device"><span class="tree-icon ion-ios-videocam"></span><span class="tree-label">Capteur 6</span><a
+                  id="6" type="device" entity="6" class="tree-link ion-ios-navigate-outline"><span></span></a></li>
+                <li class="tree-device"><span class="tree-icon ion-ios-videocam"></span><span class="tree-label">Capteur 7</span><a
+                  id="7" type="device" entity="7" class="tree-link ion-ios-navigate-outline"><span></span></a></li>
+                <li class="tree-device"><span class="tree-icon ion-ios-locked"></span><span
+                  class="tree-label">Capteur 8</span><a id="8" type="device" entity="8"
+                                                        class="tree-link ion-ios-navigate-outline"><span></span></a>
+                </li>
+                <li class="tree-device"><span class="tree-icon ion-ios-videocam"></span><span class="tree-label">Capteur 9</span><a
+                  id="9" type="device" entity="9" class="tree-link ion-ios-navigate-outline"><span></span></a></li>
+                <li class="tree-device"><span class="tree-icon ion-ios-videocam"></span><span class="tree-label">Capteur 10</span><a
+                  id="10" type="device" entity="10" class="tree-link ion-ios-navigate-outline"><span></span></a></li>
+              </ul>
+            </ul>
+            <ul>
+              <li class="tree-device"><span class="tree-icon ion-ios-videocam"></span><span
+                class="tree-label">Capteur 0</span><a id="0" type="device" entity="0"
+                                                      class="tree-link ion-ios-navigate-outline"><span></span></a></li>
+              <li class="tree-device"><span class="tree-icon ion-ios-videocam"></span><span
+                class="tree-label">Capteur 1</span><a id="1" type="device" entity="1"
+                                                      class="tree-link ion-ios-navigate-outline"><span></span></a></li>
+              <li class="tree-device"><span class="tree-icon ion-ios-locked"></span><span
+                class="tree-label">Capteur 2</span><a id="2" type="device" entity="2"
+                                                      class="tree-link ion-ios-navigate-outline"><span></span></a></li>
+            </ul>
+            <li class="tree-zone"><span class="tree-icon ion-ios-location"></span><span class="tree-label">Ariana</span><a
+              id="2" type="zone" entity="2" class="tree-link ion-ios-navigate"><span></span></a></li>
+            <ul>
+              <li class="tree-device"><span class="tree-icon ion-ios-videocam"></span><span
+                class="tree-label">Capteur 3</span><a id="3" type="device" entity="3"
+                                                      class="tree-link ion-ios-navigate-outline"><span></span></a></li>
+              <li class="tree-device"><span class="tree-icon ion-ios-videocam"></span><span
+                class="tree-label">Capteur 4</span><a id="4" type="device" entity="4"
+                                                      class="tree-link ion-ios-navigate-outline"><span></span></a></li>
+              <li class="tree-device"><span class="tree-icon ion-ios-locked"></span><span
+                class="tree-label">Capteur 5</span><a id="5" type="device" entity="5"
+                                                      class="tree-link ion-ios-navigate-outline"><span></span></a></li>
+            </ul>
+            <li class="tree-zone"><span class="tree-icon ion-ios-location"></span><span
+              class="tree-label">Ben Arous</span><a id="3" type="zone" entity="3"
+                                                    class="tree-link ion-ios-navigate"><span></span></a></li>
+            <li class="tree-zone"><span class="tree-icon ion-ios-location"></span><span
+              class="tree-label">Manouba</span><a id="4" type="zone" entity="4"
+                                                  class="tree-link ion-ios-navigate"><span></span></a></li>
+            <li class="tree-zone"><span class="tree-icon ion-ios-location"></span><span
+              class="tree-label">Siliana</span><a id="5" type="zone" entity="5"
+                                                  class="tree-link ion-ios-navigate"><span></span></a></li>
+            <li class="tree-zone"><span class="tree-icon ion-ios-location"></span><span class="tree-label">Sousse</span><a
+              id="6" type="zone" entity="6" class="tree-link ion-ios-navigate"><span></span></a></li>
+            <li class="tree-zone"><span class="tree-icon ion-ios-location"></span><span class="tree-label">Sfax</span><a
+              id="7" type="zone" entity="7" class="tree-link ion-ios-navigate"><span></span></a></li>
+            <li class="tree-zone"><span class="tree-icon ion-ios-location"></span><span
+              class="tree-label">Kairouan</span><a id="8" type="zone" entity="8"
+                                                   class="tree-link ion-ios-navigate"><span></span></a></li>
+            <li class="tree-zone"><span class="tree-icon ion-ios-location"></span><span
+              class="tree-label">Gabes</span><a id="9" type="zone" entity="9"
+                                                class="tree-link ion-ios-navigate"><span></span></a></li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-6" style="padding: 0 0px 0 20px">
+        <select id="animate-type" class="form-control form-control-sm">
+          <option value="Pan">Pan</option>
+          <option value="Elastic">Elastic</option>
+          <option value="Bounce">Bounce</option>
+          <option value="Spin">Spin</option>
+          <option value="Rotate">Rotate</option>
+          <option value="Fly">Fly</option>
+        </select>
+      </div>
+      <div class="col-sm-6" style="padding: 0 20px 0 2px">
+        <input id="animate-duration" class="form-control form-control-sm" type="number" value="1"/>
+      </div>
+    </div>
+
+  </div>
+</div>
+-->

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Central Stamp</title>
+
+
+    <!--STYLESHEET-->
+    <!--=================================================-->
+
+    <!--Open Sans Font [ OPTIONAL ]-->
+    <link href='fonts.googleapis.com/css13b7.css?family=Open+Sans:400,300,600,700' rel='stylesheet'
+          type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../lib/css/layout-default-latest.css"/>
+
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="css/nifty.min.css" rel="stylesheet">
+
+
+    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
+    <link href="css/demo/nifty-demo-icons.min.css" rel="stylesheet">
+
+    <link href="plugins/themify-icons/themify-icons.min.css" rel="stylesheet">
+    <link href="plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
+
+
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+
+    <!--&lt;!&ndash;Pace - Page Load Progress Par [OPTIONAL]&ndash;&gt;-->
+    <!--<link href="plugins/pace/pace.min.css" rel="stylesheet">-->
+    <!--<script src="plugins/pace/pace.min.js"></script>-->
+
+
+    <!--jQuery [ REQUIRED ]-->
+    <!--<script src="js/jquery.min.js"></script>-->
+
+
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <!--<script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script>-->
+
+    <!--<script type="text/javascript" src="../lib/js/jquery-latest.js"></script>-->
+    <!--<script type="text/javascript" src="../lib/js/jquery-ui-latest.js"></script>-->
+
+
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <!--NiftyJS [ RECOMMENDED ]-->
+    <script src="js/nifty.min.js"></script>
+
+
+    <!--=================================================-->
+
+
+    <!--=================================================
+
+    REQUIRED
+    You must include this in your project.
+
+
+    RECOMMENDED
+    This category must be included but you may modify which plugins or components which should be included in your project.
+
+
+    OPTIONAL
+    Optional plugins. You may choose whether to include it in your project or not.
+
+
+    DEMONSTRATION
+    This is to be removed, used for demonstration purposes only. This category must not be included in your project.
+
+
+    SAMPLE
+    Some script samples which explain how to initialize plugins or components. This category should not be included in your project.
+
+
+    Detailed information and more samples can be found in the document.
+
+    =================================================-->
+
+    <script type="text/javascript" src="../lib/js/jquery.layout-latest.js"></script>
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+
+            var layout = $('#content-container').layout({
+                minSize: 100	// ALL panes
+                , west__size: 200
+                , east__size: 200
+                , stateManagement__enabled: true
+
+                //	West Sidebar options
+                , west__childOptions: {
+                    minSize: 200	// ALL panes
+                    , center__paneSelector: '#panel-tree-zone'
+                    , south__paneSelector: '#panel-tree-device'
+                }
+
+                //	East Sidebar options
+                , east__childOptions: {
+                    minSize: 50	// ALL panes
+                    , south__size: 100
+                    , center__paneSelector: '#panel-alarm-workflow'
+                    , north__paneSelector: '#panel-alarm-list'
+                    , south__paneSelector: '#panel-alarm-report'
+
+                }
+
+                //	center options
+                , center__childOptions: {
+                    minSize: 50	// ALL panes
+                    , south__size: 100
+                    , center__size: 100
+                    , south__paneSelector: '#panel-timeline'
+                    , center__paneSelector: '#panel-events'
+                    , north__childOptions: {
+                        minSize: 50	// ALL panes
+                        , east__paneSelector: '#panel-handling'
+                        , center__paneSelector: '#panel-map'
+                    }
+                },
+
+
+            });
+            layout.addToggleBtn( '#zzz', 'west' )
+
+        });
+
+    </script>
+
+
+    <style>
+        .badge-icon {
+            font-size: 0.7em;
+            margin-left: -15px !important;
+            padding: 1px 0px 2px 0px;
+            border-radius: 1px;
+        }
+
+        #content-container {
+            padding-left: 0 !important;
+            padding-bottom: 0 !important;
+            height: 100vh;
+            padding-top: 46px;
+        }
+
+        .brand-icon {
+            width: auto;
+            height: 40px;
+            float: left;
+            margin: 0px 5px 0 2px;
+        }
+
+        .panel-unstyled {
+            border-width: 0 !important;
+            box-shadow: none !important;
+        }
+
+        .nav-tabs-xs > li > a {
+            margin-left: -4px !important;
+            padding: 5px 10px !important;
+        }
+        .tab-base .nav-tabs>li:not(.active)>a {
+            background-color: rgb(232, 232, 232);
+            opacity: 1;
+            transition: opacity,0.3s;
+        }
+        .ui-layout-toggler-east-open{
+            background: red;
+        }
+        .ui-layout-toggler-west-open{
+            background: blue;
+        }
+        .ui-layout-toggler-north-open{
+            background: green;
+        }
+        .ui-layout-toggler-south-open{
+            background: blueviolet;
+        }
+
+    </style>
+</head>
+
+<!--TIPS-->
+<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+<body>
+<div id="container" class="effect aside-float aside-bright mainnav-lg navbar-fixed">
+
+    <!--NAVBAR-->
+    <!--===================================================-->
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+
+            <!--Brand logo & name-->
+            <!--================================-->
+            <div class="navbar-header">
+                <a href="index-2.html" class="navbar-brand">
+                    <img src="img/logo.png" alt="Nifty Logo" class="brand-icon">
+                </a>
+            </div>
+            <!--================================-->
+            <!--End brand logo & name-->
+
+
+            <!--Navbar Dropdown-->
+            <!--================================-->
+            <div class="navbar-content clearfix">
+                <ul class="nav navbar-top-links pull-left">
+
+                    <!--Navigation toogle button-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <li class="tgl-menu-btn">
+                        <a class="mainnav-toggle" href="#">
+                            <i class="demo-pli-view-list"></i>
+                        </a>
+                    </li>
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <!--End Navigation toogle button-->
+
+
+                    <!--Notification dropdown-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                            <i class="demo-pli-bell"></i>
+                            <span class="badge badge-header badge-danger"></span>
+                        </a>
+
+                        <!--Notification dropdown menu-->
+                        <div class="dropdown-menu dropdown-menu-md">
+                            <div class="pad-all bord-btm">
+                                <p class="text-semibold text-main mar-no">You have 9 notifications.</p>
+                            </div>
+                            <div class="nano scrollable">
+                                <div class="nano-content">
+                                    <ul class="head-list">
+
+                                        <!-- Dropdown list-->
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <p class="pull-left">Database Repair</p>
+                                                    <p class="pull-right">70%</p>
+                                                </div>
+                                                <div class="progress progress-sm">
+                                                    <div style="width: 70%;" class="progress-bar">
+                                                        <span class="sr-only">70% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <!-- Dropdown list-->
+                                        <li>
+                                            <a href="#">
+                                                <div class="clearfix">
+                                                    <p class="pull-left">Upgrade Progress</p>
+                                                    <p class="pull-right">10%</p>
+                                                </div>
+                                                <div class="progress progress-sm">
+                                                    <div style="width: 10%;" class="progress-bar progress-bar-warning">
+                                                        <span class="sr-only">10% Complete</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <!-- Dropdown list-->
+                                        <li>
+                                            <a class="media" href="#">
+                                                <span class="badge badge-success pull-right">90%</span>
+                                                <div class="media-left">
+                                                    <i class="demo-pli-data-settings icon-2x"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <div class="text-nowrap">HDD is full</div>
+                                                    <small class="text-muted">50 minutes ago</small>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <!-- Dropdown list-->
+                                        <li>
+                                            <a class="media" href="#">
+                                                <div class="media-left">
+                                                    <i class="demo-pli-file-edit icon-2x"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <div class="text-nowrap">Write a news article</div>
+                                                    <small class="text-muted">Last Update 8 hours ago</small>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <!-- Dropdown list-->
+                                        <li>
+                                            <a class="media" href="#">
+                                                <span class="label label-danger pull-right">New</span>
+                                                <div class="media-left">
+                                                    <i class="demo-pli-speech-bubble-7 icon-2x"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <div class="text-nowrap">Comment Sorting</div>
+                                                    <small class="text-muted">Last Update 8 hours ago</small>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <!-- Dropdown list-->
+                                        <li>
+                                            <a class="media" href="#">
+                                                <div class="media-left">
+                                                    <i class="demo-pli-add-user-plus-star icon-2x"></i>
+                                                </div>
+                                                <div class="media-body">
+                                                    <div class="text-nowrap">New User Registered</div>
+                                                    <small class="text-muted">4 minutes ago</small>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <!-- Dropdown list-->
+                                        <li class="bg-gray">
+                                            <a class="media" href="#">
+                                                <div class="media-left">
+                                                    <img class="img-circle img-sm" alt="Profile Picture"
+                                                         src="img/profile-photos/9.png">
+                                                </div>
+                                                <div class="media-body">
+                                                    <div class="text-nowrap">Lucy sent you a message</div>
+                                                    <small class="text-muted">30 minutes ago</small>
+                                                </div>
+                                            </a>
+                                        </li>
+
+                                        <!-- Dropdown list-->
+                                        <li class="bg-gray">
+                                            <a class="media" href="#">
+                                                <div class="media-left">
+                                                    <img class="img-circle img-sm" alt="Profile Picture"
+                                                         src="img/profile-photos/3.png">
+                                                </div>
+                                                <div class="media-body">
+                                                    <div class="text-nowrap">Jackson sent you a message</div>
+                                                    <small class="text-muted">40 minutes ago</small>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!--Dropdown footer-->
+                            <div class="pad-all bord-top">
+                                <a href="#" class="btn-link text-dark box-block">
+                                    <i class="fa fa-angle-right fa-lg pull-right"></i>Show All Notifications
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <!--End notifications dropdown-->
+
+
+                    <!--Mega dropdown-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                            <i class="demo-pli-layout-grid"></i>
+                            <span class="label badge-header badge-primary badge-icon">3</span>
+                        </a>
+
+
+                        <ul class="dropdown-menu head-list">
+                            <li>
+                                <a href="#">
+                                    <span style="position: relative">
+                                        <i class="ti-layout icon-lg icon-fw"></i>
+                                        <span class="label badge-header badge-info badge-icon">1</span>
+                                    </span>
+                                    <span>Layout Supervision</span>
+                                </a>
+                                <a href="#">
+                                    <span style="position: relative">
+                                        <i class="ti-layout icon-lg icon-fw"></i>
+                                        <span class="label badge-header badge-info badge-icon">2</span>
+                                    </span>
+                                    <span>Layout Alarm</span>
+                                </a>
+                                <a href="#">
+                                    <span style="position: relative">
+                                        <i class="ti-layout icon-lg icon-fw"></i>
+                                        <span class="label badge-header badge-info badge-icon">3</span>
+                                    </span>
+                                    <span>Layout Video</span>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <!--End mega dropdown-->
+
+                </ul>
+                <ul class="nav navbar-top-links pull-right">
+
+                    <!--User dropdown-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <li>
+                        <a href="#" id="zzz" class="aside-toggle">
+                            <i class="ti-video-camera"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="aside-toggle">
+                            <i class="ti-map-alt"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="aside-toggle">
+                            <i class="ti-alert"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="aside-toggle">
+                            <i class="ti-layout-media-center"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="aside-toggle">
+                            <i class="ti-layout-menu-separated"></i>
+                        </a>
+                    </li>
+                    <li id="dropdown-user" class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                <span class="pull-right">
+                                    <!--<img class="img-circle img-user media-object" src="img/profile-photos/1.png" alt="Profile Picture">-->
+                                    <i class="demo-pli-male ic-user"></i>
+                                </span>
+                            <div class="username hidden-xs">Talel Lachheb</div>
+                        </a>
+
+
+                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right panel-default">
+
+                            <!-- Dropdown heading  -->
+                            <div class="pad-all bord-btm">
+                                <p class="text-main mar-btm"><span>12 Alarms treated</span><span class="text-bold"> of 19  today</span>
+                                </p>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar" style="width: 70%;">
+                                        <span class="sr-only">70%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- User dropdown menu -->
+                            <ul class="head-list">
+                                <li>
+                                    <a href="#">
+                                        <i class="demo-pli-male icon-lg icon-fw"></i> Profile
+                                    </a>
+                                </li>
+                                <li class="bg-danger">
+                                    <a href="#">
+                                        <span class="badge badge-danger pull-right">9</span>
+                                        <i class="demo-pli-mail icon-lg icon-fw"></i> Alarms
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="badge badge-info pull-right">1</span>
+                                        <i class="demo-pli-mail icon-lg icon-fw"></i> Messages
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="demo-pli-gear icon-lg icon-fw"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="demo-pli-information icon-lg icon-fw"></i> Help
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="demo-pli-computer-secure icon-lg icon-fw"></i> Lock screen
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <!-- Dropdown footer -->
+                            <div class="pad-all text-right">
+                                <a href="pages-login.html" class="btn btn-primary">
+                                    <i class="demo-pli-unlock"></i> Logout
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="boxed">
+        <div id="content-container">
+            <div class="ui-layout-center panel-unstyled">
+                Outer - Center pane
+                <div class="ui-layout-north panel-unstyled">
+                    <div id="panel-map" class="ui-layout-center panel">
+                        panel-map
+                    </div>
+
+                    <div id="panel-handling" class="ui-layout-east panel">
+                        panel-handling
+                    </div>
+                </div>
+                <div id="panel-events" class="ui-layout-center panel">
+                    panel-events
+                </div>
+
+                <div id="panel-timeline" class="ui-layout-south panel">
+                    panel-timeline
+                </div>
+            </div>
+
+            <div class="ui-layout-west panel-unstyled">
+                <div id="panel-tree-zone" class="ui-layout-center panel">panel-tree-zone</div>
+                <div id="panel-tree-device" class="ui-layout-south panel">panel-tree-device</div>
+            </div>
+
+            <div class="ui-layout-east panel-unstyled">
+                <div id="panel-alarm-list" class="ui-layout-north panel">
+                    <div class="tab-base">
+
+                        <!--Nav tabs-->
+                        <ul class="nav nav-tabs nav-tabs-xs tabs-right">
+                            <li>
+                                <a data-toggle="tab" href="#demo-ico-rgt-tab-1" aria-expanded="true">
+                                    <i class="demo-pli-bell"></i>
+                                    <span class="label badge-header badge-dark badge-icon">13</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#demo-ico-rgt-tab-2" aria-expanded="true">
+                                    <i class="demo-pli-bell text-info"></i>
+                                    <span class="label badge-header badge-info badge-icon">4</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#demo-ico-rgt-tab-3" aria-expanded="true">
+                                    <i class="demo-pli-bell text-warning"></i>
+                                    <span class="label badge-header badge-warning badge-icon">2</span>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a data-toggle="tab" href="#demo-ico-rgt-tab-4" aria-expanded="true">
+                                    <i class="demo-pli-bell text-danger"></i>
+                                    <span class="label badge-header badge-danger badge-icon">1</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                        <!--Tabs Content-->
+                        <div class="tab-content">
+                            <div id="demo-ico-rgt-tab-1" class="tab-pane fade">
+                                <p class="text-main text-semibold">First Tab Content</p>
+                                <p>all alarms.</p>
+                            </div>
+                            <div id="demo-ico-rgt-tab-2" class="tab-pane fade">
+                                <p class="text-main text-semibold">Second Tab Content</p>
+                                <p>level minor.</p>
+                            </div>
+                            <div id="demo-ico-rgt-tab-3" class="tab-pane fade">
+                                <p class="text-main text-semibold">Fourth Tab Content</p>
+                                <p>level medium.</p>
+                            </div>
+                            <div id="demo-ico-rgt-tab-4" class="tab-pane fade active in">
+                                <p class="text-main text-semibold">Fourth Tab Content</p>
+                                <p>level major.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="panel-alarm-workflow" class="ui-layout-center panel">panel-alarm-workflow</div>
+                <div id="panel-alarm-report" class="ui-layout-south panel">panel-alarm-report</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

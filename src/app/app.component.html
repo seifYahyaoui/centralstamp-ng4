@@ -1,3 +1,166 @@
-<h1>
-  {{title}}
-</h1>
+<!--<div class="container-fluid">-->
+<!--<div style="height: 950px">-->
+<!--<split *ngIf="config"-->
+<!--direction="horizontal"-->
+<!--[disabled]="config.disabled"-->
+<!--(dragEnd)="onDragEnd(-1, $event)"-->
+<!--[gutterSize]="11">-->
+<!--<ng-template ngFor let-column [ngForOf]="config.columns" let-icol="index">-->
+<!--<split-area *ngIf="column.visible"-->
+<!--[order]="icol"-->
+<!--[size]="column.size">-->
+<!--<split direction="vertical"-->
+<!--[disabled]="config.disabled"-->
+<!--[gutterSize]="7"-->
+<!--(dragEnd)="onDragEnd(icol, $event)">-->
+<!--<ng-template ngFor let-row [ngForOf]="column.rows" let-irow="index">-->
+<!--<split-area *ngIf="row.visible"-->
+<!--[order]="irow"-->
+<!--[size]="row.size">-->
+<!--<div [ngSwitch]="row.type">-->
+
+
+<!--<div *ngSwitchCase="'panel-map'" class="explanations">-->
+<!--<p>-->
+<!--Here all areas sizes and visibilities are editable and saved to localStorage.<br>-->
+<!--On component initialization, if present inside localStorage, it uses it.<br>-->
+<!--You can drag any gutters or click following buttons to toggle areas visibility:-->
+<!--<br>-->
+<!--</p>-->
+<!--<ng-template ngFor let-c [ngForOf]="config.columns">-->
+<!--<ng-template ngFor let-r [ngForOf]="c.rows">-->
+<!--<button *ngIf="r.type !== 'panel-map'" #btn-->
+<!--(click)="r.visible = !r.visible; refreshColumnVisibility(); btn.blur()"-->
+<!--[class.active]="r.visible"-->
+<!--class="btn-sm btn-outline-warning">{{ r.type }}</button>-->
+<!--</ng-template>-->
+<!--</ng-template>-->
+<!--<br><br>-->
+<!--<button (click)="toggleDisabled(); btn.blur()" #btn-->
+<!--[class.active]="config.disabled"-->
+<!--class="btn-sm btn-outline-warning">Disable splitters</button>-->
+<!--<br><br>-->
+<!--<button (click)="resetConfig()" class="btn btn-outline-warning">Reset localStorage</button>-->
+<!--</div>-->
+
+<!--<div *ngSwitchDefault class="panel"><span class="h6">{{ row.type }}</span></div>-->
+<!--</div>-->
+<!--</split-area>-->
+<!--</ng-template>-->
+<!--</split>-->
+<!--</split-area>-->
+<!--</ng-template>-->
+<!--</split>-->
+
+<!--</div>-->
+<!--</div>-->
+
+<!--
+<div class="container-fluid">
+  <div style="height: 950px">
+    <split [direction]="'horizontal'"
+           [disabled]="false"
+           (dragEnd)="onDragEnd(-1, $event)"
+           [gutterSize]="5">
+
+        <split-area [order]="0"
+                    [size]="15">
+          <split [direction]="'vertical'"
+                 [disabled]="false"
+                 [gutterSize]="5"
+                 (dragEnd)="onDragEnd(0, $event)">
+            &lt;!&ndash; panel-tree-zone &ndash;&gt;
+            <split-area [order]="0"
+                        [size]="75">
+              <div class="panel"><span class="h6">panel-tree-zone</span></div>
+            </split-area>
+            &lt;!&ndash; panel-tree-device &ndash;&gt;
+            <split-area
+              [order]="1"
+              [size]="25">
+                <div class="panel"><span class="h6">panel-tree-device</span></div>
+            </split-area>
+          </split>
+        </split-area>
+
+      <split-area [order]="1"
+                  [size]="70">
+        <split [direction]="'vertical'"
+               [disabled]="false"
+               [gutterSize]="5"
+               (dragEnd)="onDragEnd(1, $event)">
+          &lt;!&ndash;panel-map&ndash;&gt;
+          <split-area [order]="0"
+                      [size]="60">
+
+            <split
+              [direction]="'horizontal'"
+              [disabled]="false"
+              [gutterSize]="5"
+              (dragEnd)="onDragEnd(1, $event)">
+              <split-area [order]="0"
+                          [size]="70">
+                <div class="panel"><span class="h6">panel-map</span></div>
+              </split-area>
+              <split-area [order]="1"
+                          [size]="30">
+                <div class="panel"><span class="h6">panel-video</span></div>
+              </split-area>
+            </split>
+
+          </split-area>
+          &lt;!&ndash;panel-events&ndash;&gt;
+          <split-area [order]="1"
+                      [size]="20">
+            <div class="panel"><span class="h6">panel-events</span></div>
+          </split-area>
+          &lt;!&ndash;panel-timeline&ndash;&gt;
+          <split-area [order]="2"
+                      [size]="20">
+            <div class="panel"><span class="h6">panel-timeline</span></div>
+          </split-area>
+        </split>
+      </split-area>
+
+      <split-area [order]="2"
+                  [size]="15">
+        <split [direction]="'vertical'"
+               [disabled]="false"
+               [gutterSize]="5"
+               (dragEnd)="onDragEnd(2, $event)">
+          &lt;!&ndash;all alarms&ndash;&gt;
+          <split-area [order]="0"
+                      [size]="40">
+            <div class="panel"><span class="h6">all alarms</span></div>
+          </split-area>
+          &lt;!&ndash;panel-alarm-workflow&ndash;&gt;
+          <split-area [order]="1"
+                      [size]="30">
+            <div class="panel"><span class="h6">panel-alarm-workflow</span></div>
+          </split-area>
+          &lt;!&ndash;panel-alarm-report&ndash;&gt;
+          <split-area [order]="2"
+                      [size]="30">
+            <div class="panel"><span class="h6">panel-alarm-report</span></div>
+          </split-area>
+        </split>
+      </split-area>
+    </split>
+
+  </div>
+</div>
+-->
+<!--class="effect aside-float aside-bright mainnav-lg navbar-fixed bg-gray-light"-->
+<div id="container" #appDimension class="bg-gray-light">
+  <div class="row">
+    <app-layout-settings></app-layout-settings>
+    <navbar></navbar>
+  </div>
+  <div class="row">
+    <div class="container-fluid">
+      <div style="height: 80em;">
+        <layout></layout>
+      </div>
+    </div>
+  </div>
+</div>

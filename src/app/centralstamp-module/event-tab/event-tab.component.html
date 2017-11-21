@@ -1,0 +1,100 @@
+<!--<div class="container-fluid">-->
+<!--<div class="row">-->
+<!--<div class="col-md-8">-->
+<!--<label for="titleId">Report title</label>-->
+<!--<input type="text" id="titleId" [(ngModel)]="reportStructure.title">-->
+<!--<div class="table-responsive">-->
+<!--<table class="table table-bordered">-->
+<!--<thead>-->
+<!--<tr>-->
+<!--<th *ngFor="let field of selectedFields"  class="text-center">-->
+<!--{{field.columnName}}-->
+<!--</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+<!--<tr>-->
+<!--<td *ngFor="let field of selectedFields" class="text-center">{{field.reportField.name}}</td>-->
+<!--</tr>-->
+<!--</tbody>-->
+<!--</table>-->
+<!--</div>-->
+<!--<button (click)="submitReport()">Submit Report</button>-->
+<!--</div>-->
+<!--<div class="col-md-4">-->
+<!--<form #f="ngForm" (ngSubmit)="onSubmit(f.value.reportColumnTitle, f.value.selectedField);f.reset()">-->
+<!--<div class="form-group">-->
+<!--<label>Column Name</label>-->
+<!--<input type="text" class="form-control" name="reportColumnTitle" placeholder="Enter column name" ngModel>-->
+<!--</div>-->
+<!--<div class="form-group">-->
+<!--<label for="exampleSelect1">Select report attribute</label>-->
+<!--<select class="form-control" name="selectedField" id="exampleSelect1" ngModel>-->
+<!--<option>SELECT FIELD</option>-->
+<!--<option [ngValue]="reportField" *ngFor="let reportField of supportedReportFields">{{reportField.name}}</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--<button type="submit" class="btn btn-primary">Submit</button>-->
+<!--</form>-->
+<!--</div>-->
+<!--</div>-->
+<div class="row">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+
+
+      <div class="panel-heading text-center">
+        <label class="text-bold" for="titleId">Report title</label>
+        <input type="text" id="titleId" [(ngModel)]="title">
+      </div>
+
+      <div class="panel-body">
+        <label class="text-bold" for="reportStructure">Report structure</label>
+
+        <div id="reportStructure" dnd-droppable (onDropSuccess)="transferDataSuccess($event)">
+
+          <div class="text-center"><span class="text-info text-bold"
+                                         *ngIf="!(selectedFields && selectedFields.length > 0)">drop here !!</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+              <tr>
+                <th #flagEdit="var" var="false" (dblclick)="flagEdit.var = !flagEdit.var" *ngFor="let field of selectedFields">
+                  <span class="text-left" *ngIf="flagEdit.var">{{field.columnName}}</span>
+                  <input type="text" *ngIf="!flagEdit.var" (keyup.enter)="flagEdit.var = true"
+                         [(ngModel)]="field.columnName" ngDefaultControl>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td *ngFor="let field of selectedFields" class="text-left">{{field.reportField.name}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
+        <button (click)="submitReport()">Submit Report</button>
+      </div>
+
+
+    </div>
+  </div>
+  <div class="col-md-4">
+    <button class="btn-info" (click)="refreshList()">refresh</button>
+    <button class="btn-info" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>
+    </button>
+    <div class="text-center"><span class="text-info text-bold">drag from this list !!</span></div>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let reportField of supportedReportFields" dnd-draggable [dragEnabled]="true"
+          [dragData]="reportField">
+        {{reportField.name}}
+      </li>
+    </ul>
+  </div>
+</div>
+<!--</div>-->

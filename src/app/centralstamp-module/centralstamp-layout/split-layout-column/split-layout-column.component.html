@@ -1,0 +1,53 @@
+<ng-template [ngIf]="splitConfig">
+  <split [direction]="splitConfig.direction"
+         [disabled]="splitConfig.disabled"
+         (dragEnd)="onDragEnd(splitConfig.splitColumnId, $event)"
+         [gutterSize]="splitConfig.gutterSize">
+
+    <ng-template ngFor let-row [ngForOf]="splitConfig.splitAreas">
+
+      <split-area [order]="row.order"
+                  [size]="row.size"
+                  [visible]="row.visible">
+
+        <div [ngSwitch]="row.splitPanelType">
+          <!--column 0-->
+          <div *ngSwitchCase="centralStampLayoutComposite.PANEL_TREE_ZONE">
+            <app-tree></app-tree>
+            <div class="panel"><span class="h6">PANEL_TREE_ZONE</span></div>
+          </div>
+          <div *ngSwitchCase="centralStampLayoutComposite.PANEL_TREE_DEVICE">
+            <div class="panel"><span class="h6">PANEL_TREE_DEVICE</span></div>
+          </div>
+          <!--column 1-->
+          <div *ngSwitchCase="centralStampLayoutComposite.PANEL_MAP">
+            <div class="panel"><span class="h6">PANEL_MAP</span></div>
+          </div>
+          <div *ngSwitchCase="centralStampLayoutComposite.PANEL_VIDEO">
+            <div class="panel"><span class="h6">PANEL_VIDEO</span></div>
+          </div>
+          <div *ngSwitchCase="centralStampLayoutComposite.PANEL_EVENT_DISPLAYER">
+            <div class="panel"><span class="h6"></span></div>
+            <app-event-tab></app-event-tab>
+          </div>
+          <div *ngSwitchCase="centralStampLayoutComposite.PANEL_EVENT_TIMELINE">
+            <div class="panel"><span class="h6">PANEL_EVENT_TIMELINE</span></div>
+            <app-event-timeline></app-event-timeline>
+          </div>
+          <!--column 2-->
+          <div *ngSwitchCase="centralStampLayoutComposite.PANEL_ALARM_DISPLAYER">
+            <div class="panel"><span class="h6">PANEL_ALARM_DISPLAYER</span></div>
+          </div>
+          <div *ngSwitchCase="centralStampLayoutComposite.PANEL_ALARM_REPORT">
+            <div class="panel"><span class="h6">PANEL_ALARM_REPORT</span></div>
+          </div>
+        </div>
+
+        <ng-template [ngIf]="row.split">
+          <split-layout-column [splitConfig]="row.split"></split-layout-column>
+        </ng-template>
+      </split-area>
+    </ng-template>
+  </split>
+</ng-template>
+
